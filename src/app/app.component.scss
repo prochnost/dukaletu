@@ -1,0 +1,37 @@
+// .dm-container {
+//   display: flex;
+//   flex-direction: column;
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+// }
+
+// .sidenav-container {
+//   height: 100%;
+//   flex: 1;
+// }
+
+// .dm-is-mobile {
+//   flex: 1 0 auto;
+// }
+
+// .sidenav {
+//   width: 250px;
+// }
+
+RadSideDrawer FlexboxLayout {
+  justify-content: space-between;
+  align-content: center;
+}
+
+// .mat-toolbar.mat-primary {
+//   position: sticky;
+//   top: 0;
+//   z-index: 1;
+// }
+
+// RadSideDrawer FlexboxLayout > h3 {
+//   margin-left: 10px !important;
+// }

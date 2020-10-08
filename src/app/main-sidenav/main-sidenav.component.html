@@ -1,0 +1,28 @@
+<div class="dm-container" [class.dm-is-mobile]="(isHandset$ | async) || (isTablet$ | async)">
+  <mat-toolbar color="primary">
+    <button type="button"  aria-label="Open sidenav" mat-icon-button (click)="drawer.open()" *ngIf="(isHandset$ | async) || (isTablet$ | async)">
+      <mat-icon aria-label="Main side nav open icon">menu</mat-icon>
+    </button>
+    <h1>Duka Letu</h1>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [fixedTopGap]="((isHandset$ | async) || (isTablet$ | async)) ? 0 : 65"
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="((isHandset$ | async) || (isTablet$ | async)) ? 'over' : 'side'"
+        [opened]="((isHandset$ | async) || (isTablet$ | async)) === false">
+      <mat-toolbar>
+        <span class="text-uppercase">Catégories</span>
+        <button type="button" aria-label="Close sidenav" mat-icon-button (click)="drawer.close()" *ngIf="(isHandset$ | async) || (isTablet$ | async)">
+          <mat-icon aria-label="Main side nav close icon">close</mat-icon>
+        </button>
+      </mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item href="#" *ngFor="let item of navItems">Link {{item}}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content role="main">
+      <!-- Add Content Here -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
